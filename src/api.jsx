@@ -30,7 +30,7 @@
 //   return res.json();
 // }
 
-const API = "https://web-production-d8bc5.up.railway.app/";
+const API = "https://web-production-d8bc5.up.railway.app";  // NO TRAILING SLASH
 
 export async function askQuestion(query) {
   const res = await fetch(`${API}/ask`, {
@@ -39,10 +39,8 @@ export async function askQuestion(query) {
     body: JSON.stringify({ query }),
   });
 
-  if (!res.ok) {
-    console.error("API error:", res.status);
-    throw new Error("API error");
-  }
+  if (!res.ok) throw new Error("API error");
 
   return res.json();
 }
+
