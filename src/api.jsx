@@ -30,7 +30,7 @@
 //   return res.json();
 // }
 
-const API = "https://web-production-d8bc5.up.railway.app";
+const API = "https://web-production-d8bc5.up.railway.app/";
 
 export async function askQuestion(query) {
   const res = await fetch(`${API}/ask`, {
